@@ -2,9 +2,9 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import Login from "./Login";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Box from "@material-ui/core/Box";
-import { Typography } from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
 
 function Copyright(){
     return (
@@ -22,14 +22,10 @@ class AppRouter extends React.Component{
             <div>
                 <Router>
                     <div>
-                        <Switch>
-                            <Route path="/login">
-                                <Login/>
-                            </Route>
-                            <Route path="/">
-                                <App/>
-                            </Route>
-                        </Switch>
+                        <Routes>
+                            <Route path="/login" element={<Login/>}/>
+                            <Route path="/" element={<App/>}/>
+                        </Routes>
                     </div>
                     <Box mt={5}>
                         <Copyright/>
